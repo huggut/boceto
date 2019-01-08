@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     fetch(indexPage).then(function(response) {
       return caches.open('pwabuilder-offline').then(function(cache) {
-        console.log('[PWA Builder] Cached index page during Install'+ response.url);
+        console.log('[PWA Builder] Cached index page during Install ' + response.url);
         return cache.put(indexPage, response);
       });
   }));
@@ -41,3 +41,32 @@ self.addEventListener('fetch', function(event) {
     })
   );
 })
+
+// SW para Push notification
+//'use strict';
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'Notificación Push';
+  const options = {
+    body: 'Visita nuestra tienda virtual, hay nuevos artículos de interés',
+    icon: 'push/images/icon.png',
+    badge: 'push/images/badge.png'
+  };
+
+  //event.waitUntil(self.registration.showNotification(title, options));
+   const notificationPromise = self.registration.showNotification(title, options);
+  event.waitUntil(notificationPromise); 
+});
+
+self.addEventListener('notificationclick', function(event) {
+  console.log('[Service Worker] Notification click Received.');
+
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow('https://huggut.github.io/boceto/')
+  );
+});

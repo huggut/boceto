@@ -20,8 +20,12 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Estilos -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Estilos para PUSH -->
+    <link rel="stylesheet" href="push/styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    
     <!-- Meta etiquetas para iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -48,15 +52,16 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
   </head>
 
   <body id="page-top">
 
     <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">A  R  T  E  Y  C  O  L  O  R</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">A  r  t  e   y   C  o  l  o  r</a>
+        <button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menú
           <i class="fas fa-bars"></i>
         </button>
@@ -80,16 +85,24 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0">Arte y Color</h1>
-        <hr class="star-light">
+        <h1 class="mb-0">Arte y Color</h1>
+        <hr class="star-light"> <!-- Separador de linea -->
         <h2 class="font-weight-light mb-0">Tienda de arte virtual - Arte y estilo al alcance de un click</h2>
+        <button class="btn btn-secondary js-push-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="boton">
+             Activar notificaciones
+        </button>
+        <section class="subscription-details js-subscription-details is-invisible" id="notificacion">
+            <p>Ha activado la opción de recibir notificaciones desde nuestra tienda virtual con lo cual recibirá avisos de noticias y nuevos artículos de su ineterés en nuestra página. Si en el futuro desea desactivar
+            estas notificaciones solo debe hacer clic en el botón Notificaciones.</p>
+<!--            <pre><code class="js-subscription-json"></code></pre>  -->
+        </section>
       </div>
     </header>
 
     <!-- Sección portafolio -->
     <section class="portfolio" id="portfolio">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Portafolio</h2>
+        <h2 class="text-center text-secondary mb-0">Portafolio</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-md-6 col-lg-4">
@@ -157,19 +170,19 @@
     </section>
 
     <!-- Sección Acerca de... -->
-    <section class="bg-primary text-white mb-0" id="about">
+    <section class="bg-tertiary text-white mb-0" id="about">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">Acerca de...</h2>
+        <h2 class="text-center text-white">Acerca de...</h2>
         <hr class="star-light mb-5">
         <div class="row">
           <div class="col-lg-4 ml-auto">
-            <p class="lead">Boceto inicial de página Web de tienda de arte virtual con tecnología PWA para una
-               mejor compatibilidad con todos los dispositivos moviles donde se incuirá material audio visual sobre
+            <p class="lead">Boceto inicial página Web de tienda de arte virtual con tecnología PWA para una
+               mejor compatibilidad con todos los dispositivos móviles donde se incuirá material audio visual sobre
                obras de arte, artículos y noticias sobre tendencias de los diferentes estilos artisticos de la pintura
                artística</p>
           </div>
           <div class="col-lg-4 mr-auto">
-            <p class="lead">El diseño PWA (Progressive Web App proporciona facilidad de interacción desde
+            <p class="lead">El diseño PWA (Progressive Web App) proporciona facilidad de interacción desde
                dispositivos moviles ya que combinan lo mejor de las Web con lo mejor de las Apps</p>
           </div>
         </div>
@@ -179,7 +192,7 @@
     <!-- Sección contacto -->
     <section id="contact">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Contacto</h2>
+        <h2 class="text-center text-secondary mb-0">Contacto</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -228,12 +241,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Ubicación</h4>
+            <h4 class="mb-4">Ubicación</h4>
             <p class="lead mb-0">Ciudad de Pereira
               <br>Risaralda - Colombia</p>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Redes Sociales</h4>
+            <h4 class="mb-4">Redes Sociales</h4>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
@@ -263,9 +276,9 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h4 class="text-uppercase mb-4">Datos sobre el artista</h4>
+            <h4 class="mb-4">Datos sobre el artista</h4>
             <p class="lead mb-0">Pintor al óleo sobre lienzo y madera en diferentes técnicas como paisajes, naturaleza
-               muerta, arte moderno y abstracto
+               muerta, arte moderno y abstracto.
               <!--<a href="#">Start Bootstrap</a>.</p> -->
           </div>
         </div>
@@ -296,9 +309,10 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Paisajes</h2>
+              <!--<h2 class="text-secondary text-uppercase mb-0">Paisajes</h2> -->
+              <h2 class="text-secondary mb-0">Paisajes</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cabin.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/Atardecer.png" alt="">
               <p class="mb-5">Portafolio de fotos y/o videos sobre cuadros de paisajismo natural, rural o urbano</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -318,9 +332,9 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Naturaleza muerta</h2>
+              <h2 class="text-secondary mb-0">Naturaleza muerta</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cake.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/Papayas.png" alt="">
               <p class="mb-5">Portafolio de fotos y/o videos sobre cuadros de naturaleza muerta como bodegones,
                frutas, vasijas y/o elementos inertes</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -341,9 +355,9 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Abstractos</h2>
+              <h2 class="text-secondary mb-0">Abstractos</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/circus.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/abstracto.png" alt="">
               <p class="mb-5">Portafolio de fotos y/o videos sobre cuadros de arte abstarcto</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -363,9 +377,9 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Arte moderno</h2>
+              <h2 class="text-secondary mb-0">Arte moderno</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/game.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/siluetas.png" alt="">
               <p class="mb-5">Portafolio de fotos y/o videos sobre cuadros de arte moderno</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -385,9 +399,9 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Figura Humana y animal</h2>
+              <h2 class="text-secondary mb-0">Figura Humana y animal</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/safe.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/caballos.png" alt="">
               <p class="mb-5">Portafolio de fotografías y/o videos sobre cuadros de figura humana y animal</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -407,9 +421,9 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Articulos y noticias de interés</h2>
+              <h2 class="text-secondary mb-0">Articulos y noticias de interés</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/submarine.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/articulos.png" alt="">
               <p class="mb-5">Textos, artículos, videos, links y noticias sobre arte y tendencias artísticas</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -435,11 +449,15 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
 
+    <!-- Script para notificaciones PUSH -->
+    <script src="push/scripts/main.js"></script>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
     <script type="text/javascript">
 
       //"Offline copia de páginas" service worker
       //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-      if (navigator.serviceWorker.controller) {
+/*      if (navigator.serviceWorker.controller) {
         console.log('[PWA Builder] active service worker found, no need to register')
       } else {
         //Registrar ServiceWorker
@@ -448,9 +466,10 @@
         }).then(function(reg) {
           console.log('Service worker has been registered for scope:'+ reg.scope);
         });
-      }
+      } */
 
-      </script>
+   </script>
+
 
   </body>
 
